@@ -19,8 +19,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Header/>
-      <View>
+      <View style={styles.content}>
         <AddTodo/>
+       </View> 
         <View style={styles.list}>
         <FlatList
         data={data}
@@ -30,7 +31,6 @@ export default function App() {
         />
         </View>
       </View>
-    </View>
   );
 }
 
@@ -38,6 +38,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  content:{
+    padding:40,
+    paddingBottom: 0,
   },
   list: {
     padding: 30,

@@ -11,10 +11,11 @@ const Header = () =>{
 
 const styles = StyleSheet.create({
     header:{
-        backgroundColor: "orange",
-        paddingTop: 30,
-        height: 80,
+        backgroundColor: "coral",
+        paddingTop: 18,
+        height: 60,
         marginBottom: 16,
+        marginTop:30,
     },
     text:{
         textAlign: "center",
