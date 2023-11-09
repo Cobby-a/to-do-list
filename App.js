@@ -3,6 +3,7 @@ import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
 import Header from './components/header';
 import Todo from './components/todo';
+import AddTodo from './components/Addtodo';
 
 export default function App() {
   const [data, setData] = useState([
@@ -17,8 +18,9 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Header/>
+      <Header/>
+      <View>
+        <AddTodo/>
         <View style={styles.list}>
         <FlatList
         data={data}
