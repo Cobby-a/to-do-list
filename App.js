@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View, Alert } from 'react-native';
 import { useState } from 'react';
 import Header from './components/header';
 import Todo from './components/todo';
@@ -18,11 +18,18 @@ export default function App() {
   }
 
   const addHandler = (text)=>{
-    setData((prev)=>{
-      return(
-        [{text: text, id: Math.random()}, ...prev]
-      )
-    })
+    if(text.length > 3){
+      setData((prev)=>{
+        return(
+          [{text: text, id: Math.random()}, ...prev]
+        )
+      })
+    }
+    else{
+      Alert.alert('OOPS', "Todo Characters should be greater than 3", [
+        {text: 'All Right', onPress: ()=>console.log('alert closed')}
+      ])
+    }
   }
   return (
     <View style={styles.container}>
