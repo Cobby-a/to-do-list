@@ -16,11 +16,19 @@ export default function App() {
     let remove = data.filter((item)=> item.id !== id)
     setData(remove);
   }
+
+  const addHandler = (text)=>{
+    setData((prev)=>{
+      return(
+        [{text: text, id: Math.random()}, ...prev]
+      )
+    })
+  }
   return (
     <View style={styles.container}>
       <Header/>
       <View style={styles.content}>
-        <AddTodo/>
+        <AddTodo addHandler={addHandler}/>
        </View> 
         <View style={styles.list}>
         <FlatList
