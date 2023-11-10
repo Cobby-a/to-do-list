@@ -1,9 +1,13 @@
-import { StyleSheet, TouchableOpacity, Text, Pressable } from "react-native"
+import { StyleSheet, TouchableOpacity, Text, Pressable, View } from "react-native"
+import {MaterialIcons} from "@expo/vector-icons"
 
 const Todo = ({item, deleteHandler}) => {
     return(
-        <Pressable onPress={()=>deleteHandler(item.id)}>
-            <Text style={styles.forT}>{item.text}</Text>
+        <Pressable >
+            <View style={styles.forT}>
+            <Text >{item.text}</Text>
+            <MaterialIcons onPress={()=>deleteHandler(item.id)} name='delete' size={20} color='red'/>
+            </View>
         </Pressable>
     )
 }
@@ -17,5 +21,7 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderStyle: "dashed",
         borderRadius: 8,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     },
 })
